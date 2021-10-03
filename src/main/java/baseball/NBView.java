@@ -1,6 +1,9 @@
 package baseball;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
+
+import nextstep.utils.Console;
 
 class NBView {
 
@@ -44,6 +47,24 @@ class NBView {
 			formatByCount(NBText.STRIKE.getValue(), result.getCountStrike()),
 			formatByCount(NBText.BALL.getValue(), result.getCountBall())
 		)).trim());
+	}
+
+	public String inSafeInput() {
+		String input;
+		do {
+			input = input();
+		} while(null == input);
+		return input;
+	}
+
+	private String input() {
+		String input = null;
+		try {
+			input = Console.readLine();
+		} catch (NoSuchElementException | IllegalStateException e) {
+			outError(e.getMessage());
+		}
+		return input;
 	}
 
 	private String formatByCount(String format, int count) {
