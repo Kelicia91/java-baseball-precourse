@@ -7,6 +7,7 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 
 ## 구현할 기능 목록
+NB는 'Number Baseball'(숫자 야구)의 약어로 사용한다.
 - 서로 다른 digit 검증(Validator)
 - n개의 서로 다른 digit 생성(Generator)
 - 문자열을 파싱해 n개의 서로 다른 digit 생성(Parser)
