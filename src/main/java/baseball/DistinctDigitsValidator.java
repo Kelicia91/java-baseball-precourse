@@ -9,10 +9,10 @@ class DistinctDigitsValidator {
 
 	public static void validateLength(int length) {
 		if (length <= 0) {
-			throw new IllegalArgumentException("too small length; must be [1,9].");
+			throw new IllegalArgumentException("too short length; must be [1,9].");
 		}
 		if (length > 9) {
-			throw new IllegalArgumentException("too big length; must be [1,9].");
+			throw new IllegalArgumentException("too long length; must be [1,9].");
 		}
 	}
 
@@ -24,7 +24,7 @@ class DistinctDigitsValidator {
 
 	public static void validateDigit(String input) {
 		if (!input.matches(REGEX_DIGITS)) {
-			throw new IllegalArgumentException("it must contain digits.");
+			throw new IllegalArgumentException("it must contain digits; digit must be [1,9].");
 		}
 	}
 }
