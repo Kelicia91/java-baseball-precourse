@@ -1,7 +1,6 @@
 package baseball;
 
 import java.util.Arrays;
-import java.util.NoSuchElementException;
 
 import nextstep.utils.Console;
 
@@ -61,7 +60,8 @@ class NBView {
 		String input = null;
 		try {
 			input = Console.readLine();
-		} catch (NoSuchElementException | IllegalStateException e) {
+		} catch (IllegalStateException e) {
+			// @note: NoSuchElementException 까지 잡았더니 ApplicationTest.낫싱() 테스트가 종료되지 않음
 			outError(e.getMessage());
 		}
 		return input;
